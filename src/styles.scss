@@ -1,1 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap");
+@import "ngx-toastr/toastr";
+
+$main-color: #0aad0a;
+$light-color: #f0f3f2;
+$rating-color: #ffc908;
+.text-rating {
+  color: $rating-color;
+}
+$font-family: "Encode Sans Expanded", sans-serif;
+
+@mixin pref($type, $val) {
+  #{$type}: #{$val} !important;
+  -webkit-#{$type}: #{$val};
+  -moz-#{$type}: #{$val};
+  -ms-#{$type}: #{$val};
+  -o-#{$type}: #{$val};
+}
+
+body {
+  font-family: $font-family;
+}
+.main-background {
+  background-color: $main-color !important;
+  color: #fff !important;
+}
+
+.main-btn {
+  @extend .main-background;
+  padding: 5px 8px;
+  @include pref(border-radius, 5px);
+  border: unset;
+  cursor: pointer;
+  &:disabled {
+    background-color: #0aad0a69;
+    color: #ffffff5b;
+    cursor: not-allowed;
+  }
+}
+.active-link {
+  @include pref(border-radius, 10px);
+  @extend.main-background;
+}
+
+.text-main {
+  color: $main-color;
+}
+.bg-main-light {
+  background-color: $light-color;
+}
+.font-size {
+  font-size: 0.7rem;
+}

@@ -1,0 +1,13 @@
+::ng-deep {
+  .ngxImageZoomContainer {
+    width: 100% !important;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+  }
+  .ngxImageZoomContainer > img {
+    height: 400px;
+  }
+}

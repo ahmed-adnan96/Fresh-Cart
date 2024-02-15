@@ -1,0 +1,73 @@
+<section>
+  <div class="w-75 m-auto py-5 bg-light p-3 shadow rounded-3 my-5 container">
+    <h3>Shop Cart</h3>
+    <h4 class="h6 text-main">
+      Total Price {{ dataProduct.totalCartPrice }} EGP
+    </h4>
+    <button
+      class="main-btn d-block"
+      (click)="clearAllProduct()"
+      *ngIf="dataProduct.products?.length > 1"
+    >
+      Clear Cart
+    </button>
+    <div
+      class="row border-bottom py-2 border-1"
+      *ngFor="let item of dataProduct.products"
+    >
+      <div class="col-md-2">
+        <div class="co border border-1 rounded-3 p-1">
+          <img
+            class="w-100"
+            [src]="item.product.imageCover"
+            [alt]="item.product.title"
+          />
+        </div>
+      </div>
+      <div class="col-md-10">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="d-flex flex-column justify-content-between">
+            <h5 class="pt-3">{{ item.product.title }}</h5>
+            <h6 class="text-main" class="my-3">price : {{ item.price }} EGP</h6>
+            <button
+              #btnRemove
+              class="remove-btn"
+              (click)="deletProduct(item.product.id, btnRemove)"
+            >
+              <i class="fa-solid fa-trash-can text-main"></i> Remove
+            </button>
+          </div>
+          <div class="d-flex justify-content-between width-btn">
+            <button
+              #btn1
+              role="button"
+              class="co plus border border-1 rounded-2 d-flex justify-content-center align-items-center p-2"
+              (click)="
+                changCountProduct(item.product.id, item.count + 1, btn1, btn2)
+              "
+            >
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <p class="fw-bolder">{{ item.count }}</p>
+            <button
+              #btn2
+              role="button"
+              class="co minus border border-1 rounded-2 d-flex justify-content-center align-items-center p-2"
+              (click)="
+                changCountProduct(item.product.id, item.count - 1, btn1, btn2)
+              "
+            >
+              <i class="fa-solid fa-minus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button [routerLink]="['/payment', dataProduct._id]" class="main-btn my-4">
+      Online Payment
+      <span
+        ><img src="./assets/images/visa-1.svg" class="w-25" alt="visa"
+      /></span>
+    </button>
+  </div>
+</section>

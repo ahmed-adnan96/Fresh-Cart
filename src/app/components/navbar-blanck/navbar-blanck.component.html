@@ -1,0 +1,124 @@
+<nav #navBar class="navbar fixed-top navbar-expand-sm navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">
+      <img src="./assets/images/freshcart-logo.svg" alt="FreshCart" />
+    </a>
+    <button
+      class="navbar-toggler d-lg-none"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            routerLinkActive="active-link"
+            routerLink="home"
+            >Home
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLinkActive="active-link"
+            routerLink="product"
+            >Products</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLinkActive="active-link"
+            routerLink="categories"
+            >Categories</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active-link" routerLink="brands"
+            >Brands</a
+          >
+        </li>
+      </ul>
+      <ul
+        class="navbar-nav ms-auto mt-2 mt-lg-0 d-flex align-items-center justify-content-between"
+      >
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            resetPassword
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" routerLink="reset">Reset</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            routerLink="setting"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            setting
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" routerLink="/setting/forget"
+                >Forget Password</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="/setting/update"
+                >Update Password</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link position-relative" routerLink="cart">
+            <i class="fa-solid fa-cart-shopping fa-2x text-main"></i>
+            <span
+              class="badge display-6 bg-info text-dark position-absolute top-0 end-0"
+              >{{ cartCount }}</span
+            >
+          </a>
+        </li>
+        <li class="me-3">
+          <i class="fab fa-facebook"></i>
+        </li>
+        <li class="me-3">
+          <i class="fab fa-linkedin"></i>
+        </li>
+        <li class="me-3">
+          <i class="fab fa-instagram"></i>
+        </li>
+        <li class="me-3">
+          <i class="fab fa-youtube"></i>
+        </li>
+        <li class="me-3">
+          <i class="fab fa-tiktok"></i>
+        </li>
+        <li class="me-3">
+          <i class="fab fa-twitter"></i>
+        </li>
+        <li (click)="signOut()">
+          <span role="button">signOut</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

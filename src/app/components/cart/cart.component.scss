@@ -1,0 +1,20 @@
+.co {
+  border-color: #0aad0a !important;
+}
+section {
+  .plus,
+  .minus {
+    height: 30px !important;
+    width: 30px !important;
+  }
+  .width-btn {
+    width: 10% !important;
+  }
+  .remove-btn {
+    background: transparent !important;
+    color: #0aad0a !important;
+    padding: 0 !important;
+    border: none !important;
+    width: fit-content !important;
+  }
+}
